@@ -1,40 +1,32 @@
-/* Code Kata No. 2 Karate Chop */
+/* Project Euler Problem 1
+ * Find the sum of all the multiples of 3 or 5 below 1000. */
 
-#include <vector>
-#include <iterator>
 #include <iostream>
+#include <vector>
+#include <numeric>
 
 using std::vector;
-using std::distance;
-using std::advance;
+using std::accumulate;
 
-static int chop(int target, const vector<int>& arrayofints)
+uint32_t computeMultiples(uint16_t max)
 {
-  int result(-1);
-
-  auto begin = arrayofints.begin();
-  auto end = arrayofints.end();
-  while (begin != end)
-  {
-      auto dist = distance(begin,end) / 2;
-      auto middle = begin;
-      advance(middle,dist);
-      if (*middle == target)
-	return distance(arrayofints.begin(), middle);
-      else if (*middle < target)
-	begin = middle;
-      else
-	end = middle;
-  }
-      
-  return result;
+	int result(0);
+	for (int i = 1; i < 100; i++)
+	{
+		if (i % )
+	}
+	
+	return accumulate(nums.begin(), nums.end(), 0);
 }
 
+
 int main()
-{
-  std::cout << "chop 3 1,2,3,4,5: " << chop(3, {1,2,3,4,5}) << std::endl;
-  std::cout << "chop 5 1,2,3,4,5: " << chop(5, {1,2,3,4,5}) << std::endl;
-  std::cout << "chop 1 1,2,3,4,5: " << chop(1, {1,2,3,4,5}) << std::endl;
-  
-  return 0;
+{  
+	uint32_t multiples(computeMultiples(1000));
+
+	std::cout << "multiples of 5: " << multiples << std::endl;
+	std::cout << "multiples of 3: " << multiples << std::endl;
+	std::cout << "multiples of 3 and 5: " << (multiplesof3 + multiplesof5) << std::endl;
+
+	return 0;
 }
