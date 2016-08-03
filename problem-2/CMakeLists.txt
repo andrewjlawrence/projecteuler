@@ -1,0 +1,6 @@
+cmake_minimum_required (VERSION 2.8.11)
+if (APPLE)
+   set(CMAKE_CXX_FLAGS "-std=c++11 -stdlib=libc++")
+endif()
+project(euler2)
+add_executable(main main.cpp)
